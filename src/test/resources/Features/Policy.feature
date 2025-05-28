@@ -1,0 +1,2 @@
+Feature: Policy details page
+
