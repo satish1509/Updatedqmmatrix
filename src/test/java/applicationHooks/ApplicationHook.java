@@ -37,6 +37,7 @@ public class ApplicationHook {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		
+		
 // ********************** AFTER HOOKS ***************************
 	}
 
@@ -51,7 +52,10 @@ public class ApplicationHook {
 	}
 	
 	@After(order =0)
-	public void quitBrowser()
+	public void allureresults(){
+		
+		
+	}
 	{
 
 		//driver.quit();

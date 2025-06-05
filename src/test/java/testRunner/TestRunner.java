@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 // You can run your test cases from here 
 //@RunWith(Cucumber.class)
 @CucumberOptions(
-	    features = {"./src/test/resources/Features/Admin.feature"},
+	    features = {"./src/test/resources/Features/PIM.feature"},
 	    glue = {"applicationHooks", "stepDefination"},
 	    plugin = {
 	        "html:./Reports/myReports.html"
@@ -23,7 +23,7 @@ import io.cucumber.testng.CucumberOptions;
 public class TestRunner extends AbstractTestNGCucumberTests{
 
 	@Override
-	@DataProvider(parallel=true)
+	@DataProvider(parallel=false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}

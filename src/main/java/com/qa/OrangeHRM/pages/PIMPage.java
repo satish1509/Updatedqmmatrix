@@ -30,7 +30,7 @@ public class PIMPage {
     private WebElement userInfo;
 
     // Navigation Tabs
-    @FindBy(xpath = "(//ul/li)[2]")
+    @FindBy(xpath = "//span[text()='PIM']")
     private WebElement pimTab;
 
     @FindBy(xpath = "//a[text()='Add Employee']")
@@ -49,19 +49,19 @@ public class PIMPage {
     @FindBy(xpath = "//input[@name='lastName']/following::div/input")
     private WebElement employeeIdField;
 
-    @FindBy(xpath = "(//img[@alt='profile picture'])[2]")
+    @FindBy(xpath = "//div[@class='employee-image-wrapper']")
     private WebElement photographUploadInput;
 
     @FindBy(xpath = "//span[@class='oxd-switch-input oxd-switch-input--active --label-right']")
     private WebElement createLoginSwitch;
 
-    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[3]")
+    @FindBy(xpath = "//input[@fdprocessedid='txhcpb']")
     private WebElement usernameField;
 
-    @FindBy(xpath = "(//*[text()='Disabled']/following::input[@type='password'])[1]")
+    @FindBy(xpath = "//input[@fdprocessedid='9i673']")
     private WebElement passwordField;
 
-    @FindBy(xpath = "(//*[text()='Disabled']/following::input[@type='password'])[2]")
+    @FindBy(xpath = "/input[@fdprocessedid='61k0xv']")
     private WebElement confirmPasswordField;
 
     @FindBy(xpath = "//button[@type='submit']")
@@ -111,7 +111,7 @@ public class PIMPage {
   }
     public void enterlastname() {
     	
-        TestUtility.enterRandomLastname(lastNameField);
+        TestUtility.enterRandomLastName(lastNameField);
 
     	
     }

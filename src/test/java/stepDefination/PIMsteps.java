@@ -17,7 +17,7 @@ public class PIMsteps extends TestUtility {
     private PIMPage pimPage;
     
     public PIMsteps() {
-        this.driver = DriverFactory.getDriver();  // ✅ Get driver from centralized factory
+        this.driver = DriverFactory.getDriver();  
         this.loginPage = new LoginPage(driver);
         this.pimPage = new PIMPage(driver);
     }
