@@ -4,6 +4,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.github.javafaker.Faker;
 
 public class TestUtility {
+    private static WebDriver driver;
 
     private static Faker faker = new Faker();
     private static String randomPassword;
@@ -53,15 +55,25 @@ public class TestUtility {
 
     // File upload using Robot class
     public static void fileupload(String filepath) throws Exception {
-        Robot rb = new Robot();
+    	
+             Thread.sleep(4000);
+        // Copy path to clipboard
         StringSelection str = new StringSelection(filepath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
+        // Create Robot instance
+        Robot rb = new Robot();
+
+        // Simulate CTRL+V
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
         rb.keyRelease(KeyEvent.VK_V);
         rb.keyRelease(KeyEvent.VK_CONTROL);
 
+        // Wait a bit before pressing Enter
+        Thread.sleep(1000);
+
+        // Press Enter
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
     }
@@ -104,6 +116,14 @@ public class TestUtility {
         element.sendKeys(randomPassword);
         System.out.println("Entered Random Password: " + randomPassword);
     }
+    
+    public static void enterRandomMobileNumber(WebElement element) {
+        // Generate a random 10-digit number starting with 9, 8, or 7
+        String randomMobileNumber = Faker.instance().regexify("[987]{1}[0-9]{9}");
+        element.sendKeys(randomMobileNumber);
+        System.out.println("Entered Random Mobile Number: " + randomMobileNumber);
+    }
+
 
     // Return last generated password (if needed)
     public static String getRandomPassword() {
@@ -143,6 +163,8 @@ public class TestUtility {
             }
         }
 		return false;
-    }}
+    }
+   
+}
 
     // Count dropdown option

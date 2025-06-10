@@ -1,6 +1,6 @@
 Feature: Verify the Login Functionality
 
-  @Login
+  @smoke
   Scenario: Successful login with valid credentials
     Given the user navigates to application URL
     When the user enters a valid username and valid password

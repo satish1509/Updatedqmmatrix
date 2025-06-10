@@ -3,7 +3,7 @@ Feature: Admin Module - Add and Search User
   Background:
     Given User launches the application URL
     And User logs into the application with valid credentials
-    And User is on the Admin module page
+    And User is on the Recruitment module page
     
 @admin
   Scenario: Add a new user in Admin module
